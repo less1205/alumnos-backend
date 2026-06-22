@@ -34,7 +34,7 @@
         <jacoco.version>0.8.13</jacoco.version>
         <pitest.version>1.18.2</pitest.version>
         <pitest-junit5.version>1.2.1</pitest-junit5.version>
-        <spring-cloud-contract.version>4.2.1</spring-cloud-contract.version>
+        <spring-cloud-contract.version>5.0.3</spring-cloud-contract.version>
         <openrewrite.version>7.32.0</openrewrite.version>
         <spotless.version>2.43.0</spotless.version>
         <pmd.version>3.26.0</pmd.version>
