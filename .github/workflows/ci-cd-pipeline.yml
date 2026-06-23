@@ -282,7 +282,7 @@ jobs:
 
           aws ecr describe-repositories \
             --repository-names "$ECR_REPO_BACKEND" \
-            --region "$AWS_REGION" >/dev/null 2>&1 || \
+            --region "$AWS_REGION"
 
 
       - name: Login a Amazon ECR
