@@ -16,6 +16,23 @@ jobs:
     name: "🔒 Security Scan"
     runs-on: ubuntu-latest
     steps:
+      - name: Debug AWS Secrets
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+        run: |
+          echo "========================================="
+          echo " DEBUG AWS SECRETS"
+          echo "========================================="
+
+          echo "AWS_ACCESS_KEY_ID existe: $([ -n "$AWS_ACCESS_KEY_ID" ] && echo true || echo false)"
+          echo "AWS_SECRET_ACCESS_KEY existe: $([ -n "$AWS_SECRET_ACCESS_KEY" ] && echo true || echo false)"
+          echo "AWS_SESSION_TOKEN existe: $([ -n "$AWS_SESSION_TOKEN" ] && echo true || echo false)"
+
+          echo "Largo AWS_ACCESS_KEY_ID: ${#AWS_ACCESS_KEY_ID}"
+          echo "Largo AWS_SECRET_ACCESS_KEY: ${#AWS_SECRET_ACCESS_KEY}"
+          echo "Largo AWS_SESSION_TOKEN: ${#AWS_SESSION_TOKEN}"
       - name: Checkout
         uses: actions/checkout@v4
 
