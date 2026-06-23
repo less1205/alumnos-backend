@@ -276,13 +276,7 @@ jobs:
           echo "Region actual:"
           aws configure get region || true
 
-      - name: Verificar o crear repositorio ECR
-        run: |
-          echo "Verificando repositorio ECR: $ECR_REPO_BACKEND"
 
-          aws ecr describe-repositories \
-            --repository-names "$ECR_REPO_BACKEND" \
-            --region "$AWS_REGION"
 
 
       - name: Login a Amazon ECR
